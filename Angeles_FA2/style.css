@@ -1,0 +1,167 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('nu moa.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay for contrast */
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-end; /* Push form to the far right */
+  align-items: center;
+  padding: 40px; /* Adds spacing from the edges */
+}
+
+.container {
+  display: flex;
+  width: 85%;
+  max-width: 1000px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  margin-right: 60px; /* Move entire container further right */
+}
+
+.left-panel {
+  flex: 1;
+  background: linear-gradient(to bottom right, #0D47A1, #FFD700);
+  color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-panel h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.left-panel p {
+  font-size: 1.2rem;
+}
+
+.form-container {
+  flex: 1;
+  padding: 30px;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+}
+
+.form-container h2 {
+  color: #0D47A1;
+  margin-bottom: 20px;
+  text-align: center; /* Center heading text */
+}
+
+form {
+  width: 100%;
+  max-width: 400px; /* Limit form width */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center form elements */
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #0D47A1;
+  width: 100%;
+  text-align: center; /* Center label text */
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center; /* Center text inside inputs */
+}
+
+.gender-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+  justify-content: center; /* Center the radio buttons */
+  width: 100%;
+}
+
+.gender-options label {
+  font-weight: normal;
+  color: #0D47A1;
+  text-align: center;
+}
+
+.terms {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* center the whole checkbox+text */
+}
+
+.terms label {
+  display: inline-flex; /* inline-flex so it only takes necessary width */
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #0D47A1;
+  font-weight: normal;
+  max-width: 300px; /* limit width so it doesn't stretch too far */
+  text-align: left; /* keep text left aligned inside label */
+  white-space: nowrap; /* prevent breaking */
+}
+
+
+button {
+  background-color: #0D47A1;
+  color: #FFD700;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+}
+
+button:hover {
+  background-color: #08306b;
+}
+
+/* Responsive styling for phones and small screens */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column; /* stack left panel and form vertically */
+    margin-right: 0; /* reset right margin */
+    width: 95%; /* use most of the screen */
+  }
+
+  .left-panel,
+  .form-container {
+    flex: none;
+    width: 100%; /* full width */
+    border-radius: 12px 12px 0 0; /* optional rounded corners */
+  }
+
+  .form-container {
+    padding: 20px 15px;
+  }
+
+  button {
+    max-width: 100%; /* button fills width */
+  }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me - Juan Miguel G. Angeles</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --nu-blue: #00205b;
+      --nu-gold: #ffcc00;
+      --nu-bg: #f5f5f5;
+      --dark-bg: #1a202c;
+      --dark-text: #f5f5f5;
+    }
+
+    body {
+      background-color: var(--nu-bg);
+      color: var(--nu-blue);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+
+    header, footer {
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode header,
+    body.dark-mode footer {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+
+    .nu-button {
+      background-color: var(--nu-blue);
+      color: white;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nu-button:hover {
+      background-color: var(--nu-gold);
+      color: black;
+    }
+
+    .dark-toggle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      background-color: var(--nu-blue);
+      color: white;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .dark-toggle:hover {
+      background-color: var(--nu-gold);
+      color: black;
+    }
+  </style>
+</head>
+<body class="font-sans">
+  <header class="bg-white text-nu-blue py-4 px-6 flex justify-between items-center shadow">
+    <div class="flex items-center">
+      <img src="logo.png" alt="Logo" class="h-10 w-10 rounded-full" onerror="this.style.display='none'">
+      <span class="ml-2 font-bold">Juan Miguel G. Angeles</span>
+    </div>
+    <nav class="flex items-center gap-4">
+      <a href="index.html" class="hover:underline">← Back to Portfolio</a>
+      <button onclick="toggleDarkMode()" id="toggleMode" class="dark-toggle">🌙</button>
+    </nav>
+  </header>
+
+  <main class="p-8 max-w-5xl mx-auto">
+    <h2 class="text-2xl font-bold mb-6 text-center">About Me</h2>
+
+    <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+      <img src="pic.jpg" alt="Juan Miguel G. Angeles" class="w-48 h-48 rounded-full object-cover shadow-lg" onerror="this.style.display='none'">
+
+      <div>
+        <p class="mb-4">
+          Hello! I'm <strong>Juan Miguel G. Angeles</strong>, a passionate web developer currently in my 2nd year of pursuing a Bachelor of Science in Information Technology with a specialization in Mobile and Web Applications at National University.
+        </p>
+        <p class="mb-4">
+          I love building responsive and user-friendly websites. I'm currently focusing on improving my skills in HTML, CSS, JavaScript, and exploring backend technologies to become a full-stack developer.
+        </p>
+        <p class="mb-4">
+          When I'm not coding, I enjoy playing valorant, watching tech-related content, and exploring the latest in web development.
+        </p>
+        <a href="index.html#contact" class="mt-6 inline-block px-4 py-2 nu-button rounded hover:bg-yellow-400 hover:text-black transition">
+          Contact Me
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center text-sm py-4 border-t border-gray-300 text-nu-blue">
+    © 2025 Juan Miguel G. Angeles. All Rights Reserved.
+  </footer>
+
+  <script>
+    const toggleButton = document.getElementById("toggleMode");
+    const body = document.body;
+    let dark = false;
+
+    function toggleDarkMode() {
+      body.classList.toggle("dark-mode");
+      dark = !dark;
+      toggleButton.textContent = dark ? "☀️" : "🌙";
+    }
+  </script>
+</body>
+</html>

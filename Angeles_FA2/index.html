@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <div class="left-panel">
+        <!-- You can add text, logo, or decoration here -->
+        <h1>Welcome to NU MOA</h1>
+        <p>Your future begins here.</p>
+      </div>
+      <div class="form-container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+          <label for="fullName">Full Name:</label>
+          <input type="text" id="fullName" name="fullName" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+
+          <label for="phone">Phone Number:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="09[0-9]{9}"
+            maxlength="11"
+            inputmode="numeric"
+            required
+            placeholder="e.g. 09123456789"
+          />
+
+          <label>Gender:</label>
+          <div class="gender-options">
+            <label><input type="radio" name="gender" value="Male" required /> Male</label>
+            <label><input type="radio" name="gender" value="Female" required /> Female</label>
+          </div>
+
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required />
+
+          <label for="course">Course/Program:</label>
+          <select id="course" name="course" required>
+            <option value="">Select your course</option>
+            <option value="BSIT">BSIT</option>
+            <option value="BSCS">BSCS</option>
+            <option value="BSBA">BSBA</option>
+            <option value="BSA">BSA</option>
+          </select>
+
+          <div class="terms">
+            <label><input type="checkbox" id="terms" required /> Accept Terms and Conditions</label>
+          </div>
+
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
